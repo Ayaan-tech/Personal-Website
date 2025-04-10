@@ -2,9 +2,14 @@
 
 import Image from "next/image";
 import React from "react";
-import { CardBody, CardContainer, CardItem } from "../ui/3d-card";
-import Link from "next/link";
 
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+
+import CardActions from '@mui/material/CardActions';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import { Box } from '@mui/material';
 
 const Project = () => {
   return (
@@ -15,154 +20,184 @@ const Project = () => {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* AgriSense AI Card */}
-          <CardContainer className="inter-var">
-            <CardBody className="bg-gradient-to-br from-neutral-800 to-neutral-900 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] border-white/[0.1] w-full h-auto rounded-xl p-6 border">
-              <CardItem
-                translateZ="50"
-                className="text-2xl font-bold text-emerald-400"
+          <Card 
+            sx={{ 
+              background: 'linear-gradient(to bottom right, #262626, #171717)',
+              border: '1px solid rgba(255, 255, 255, 0.1)',
+              borderRadius: '12px',
+              '&:hover': {
+                boxShadow: '0 25px 50px -12px rgba(16, 185, 129, 0.1)'
+              },
+              height: '100%',
+              display: 'flex',
+              flexDirection: 'column'
+            }}
+          >
+            <CardContent>
+              <Typography 
+                gutterBottom 
+                variant="h5" 
+                component="div" 
+                sx={{ fontWeight: 'bold', color: '#34d399' }}
               >
                 AgriSense AI
-              </CardItem>
-              <CardItem
-                as="p"
-                translateZ="60"
-                className="text-neutral-300 text-sm max-w-sm mt-2"
-              >
+              </Typography>
+              <Typography variant="body2" sx={{ color: '#d4d4d4', mb: 2 }}>
                 A Smart AI-powered agricultural monitoring system for modern farming
-              </CardItem>
-              <CardItem
-                translateZ="100"
-                rotateX={20}
-                rotateZ={-10}
-                className="w-full mt-4"
+              </Typography>
+            </CardContent>
+            <Box sx={{ position: 'relative', height: '240px', mx: 2 }}>
+              <Image
+                src="/FasalGuru.jpg"
+                height={400}
+                width={600}
+                className="object-contain rounded-xl"
+                alt="AgriSense AI Dashboard"
+                priority
+                style={{ width: '100%', height: '100%' }}
+              />
+            </Box>
+            <CardActions sx={{ mt: 'auto', p: 2, justifyContent: 'center' }}>
+              <Button 
+                fullWidth
+                onClick={() => {
+                  window.location.href = 'https://github.com/Ayaan-tech/T.E-COMP-MP2B';
+                }}
+                sx={{ 
+                  backgroundColor: '#10b981', 
+                  color: 'white',
+                  textTransform: 'none',
+                  borderRadius: '12px',
+                  py: 1.5,
+                  '&:hover': {
+                    backgroundColor: '#059669'
+                  }
+                }}
               >
-                <Image
-                  src="/FasalGuru.jpg"
-                  height={400}
-                  width={600}
-                  className="h-60 w-full object-contain overflow-hidden  rounded-xl group-hover/card:shadow-xl"
-                  alt="AgriSense AI Dashboard"
-                  priority
-                />
-              </CardItem>
-              <div className="mt-8">
-                <CardItem translateZ={30} as="div" className="w-full">
-                  <Link 
-                    href="https://github.com/Ayaan-tech/T.E-COMP-MP2B" 
-                    className="block w-full"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      window.location.href = 'https://github.com/Ayaan-tech/T.E-COMP-MP2B';
-                    }}
-                  >
-                    <button className="w-full bg-emerald-500 hover:bg-emerald-600 text-white rounded-xl py-3 font-medium transition-colors">
-                      View Project
-                    </button>
-                  </Link>
-                </CardItem>
-              </div>
-            </CardBody>
-          </CardContainer>
+                View Project
+              </Button>
+            </CardActions>
+          </Card>
 
           {/* Vocal Scribe Card */}
-          <CardContainer className="inter-var">
-            <CardBody className="bg-gradient-to-br from-neutral-800 to-neutral-900 relative group/card dark:hover:shadow-2xl dark:hover:shadow-purple-500/[0.1] border-white/[0.1] w-full h-auto rounded-xl p-6 border">
-              <CardItem
-                translateZ="50"
-                className="text-2xl font-bold text-purple-400"
+          <Card 
+            sx={{ 
+              background: 'linear-gradient(to bottom right, #262626, #171717)',
+              border: '1px solid rgba(255, 255, 255, 0.1)',
+              borderRadius: '12px',
+              '&:hover': {
+                boxShadow: '0 25px 50px -12px rgba(168, 85, 247, 0.1)'
+              },
+              height: '100%',
+              display: 'flex',
+              flexDirection: 'column'
+            }}
+          >
+            <CardContent>
+              <Typography 
+                gutterBottom 
+                variant="h5" 
+                component="div"
+                sx={{ fontWeight: 'bold', color: '#a78bfa' }}
               >
                 Vocal Scribe
-              </CardItem>
-              <CardItem
-                as="p"
-                translateZ="60"
-                className="text-neutral-300 text-sm max-w-sm mt-2"
-              >
+              </Typography>
+              <Typography variant="body2" sx={{ color: '#d4d4d4', mb: 2 }}>
                 Advanced voice recognition and transcription powered by AI
-              </CardItem>
-              <CardItem
-                translateZ="100"
-                rotateX={20}
-                rotateZ={-10}
-                className="w-full mt-4"
+              </Typography>
+            </CardContent>
+            <Box sx={{ position: 'relative', height: '240px', mx: 2 }}>
+              <Image
+                src="/Meet.jpg"
+                height={400}
+                width={600}
+                className="object-contain rounded-xl"
+                alt="Vocal Scribe Interface"
+                priority
+                style={{ width: '100%', height: '100%' }}
+              />
+            </Box>
+            <CardActions sx={{ mt: 'auto', p: 2, justifyContent: 'center' }}>
+              <Button 
+                fullWidth
+                onClick={() => {
+                  window.location.href = 'https://meet-iota-flame.vercel.app/';
+                }}
+                sx={{ 
+                  backgroundColor: '#a855f7', 
+                  color: 'white',
+                  textTransform: 'none',
+                  borderRadius: '12px',
+                  py: 1.5,
+                  '&:hover': {
+                    backgroundColor: '#9333ea'
+                  }
+                }}
               >
-                <Image
-                  src="/Meet.jpg"
-                  height={400}
-                  width={600}
-                  className="h-60 w-full object-contain rounded-xl group-hover/card:shadow-xl"
-                  alt="Vocal Scribe Interface"
-                  priority
-                />
-              </CardItem>
-              <div className="mt-8">
-                <CardItem translateZ={30} as="div" className="w-full">
-                  <Link 
-                    href="https://meet-iota-flame.vercel.app/" 
-                    className="block w-full"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      window.location.href = 'https://meet-iota-flame.vercel.app/';
-                    }}
-                  >
-                    <button className="w-full bg-purple-500 hover:bg-purple-600 text-white rounded-xl py-3 font-medium transition-colors">
-                      View Project
-                    </button>
-                  </Link>
-                </CardItem>
-              </div>
-            </CardBody>
-          </CardContainer>
+                View Project
+              </Button>
+            </CardActions>
+          </Card>
 
           {/* ImageVision Pro Card */}
-          <CardContainer className="inter-var">
-            <CardBody className="bg-gradient-to-br from-neutral-800 to-neutral-900 relative group/card dark:hover:shadow-2xl dark:hover:shadow-blue-500/[0.1] border-white/[0.1] w-full h-auto rounded-xl p-6 border">
-              <CardItem
-                translateZ="50"
-                className="text-2xl font-bold text-blue-400"
+          <Card 
+            sx={{ 
+              background: 'linear-gradient(to bottom right, #262626, #171717)',
+              border: '1px solid rgba(255, 255, 255, 0.1)',
+              borderRadius: '12px',
+              '&:hover': {
+                boxShadow: '0 25px 50px -12px rgba(59, 130, 246, 0.1)'
+              },
+              height: '100%',
+              display: 'flex',
+              flexDirection: 'column'
+            }}
+          >
+            <CardContent>
+              <Typography 
+                gutterBottom 
+                variant="h5" 
+                component="div"
+                sx={{ fontWeight: 'bold', color: '#60a5fa' }}
               >
                 ImageVision Pro
-              </CardItem>
-              <CardItem
-                as="p"
-                translateZ="60"
-                className="text-neutral-300 text-sm max-w-sm mt-2"
-              >
+              </Typography>
+              <Typography variant="body2" sx={{ color: '#d4d4d4', mb: 2 }}>
                 Next-generation image processing and analysis platform
-              </CardItem>
-              <CardItem
-                translateZ="100"
-                rotateX={20}
-                rotateZ={-10}
-                className="w-full mt-4"
+              </Typography>
+            </CardContent>
+            <Box sx={{ position: 'relative', height: '240px', mx: 2 }}>
+              <Image
+                src="/Image.jpg"
+                height={400}
+                width={600}
+                className="object-contain rounded-xl"
+                alt="ImageVision Pro Dashboard"
+                priority
+                style={{ width: '100%', height: '100%' }}
+              />
+            </Box>
+            <CardActions sx={{ mt: 'auto', p: 2, justifyContent: 'center' }}>
+              <Button 
+                fullWidth
+                onClick={() => {
+                  window.location.href = 'https://github.com/Ayaan-tech/ImageVision';
+                }}
+                sx={{ 
+                  backgroundColor: '#3b82f6', 
+                  color: 'white',
+                  textTransform: 'none',
+                  borderRadius: '12px',
+                  py: 1.5,
+                  '&:hover': {
+                    backgroundColor: '#2563eb'
+                  }
+                }}
               >
-                <Image
-                  src="/Image.jpg"
-                  height={400}
-                  width={600}
-                  className="h-60 w-full object-contain rounded-xl group-hover/card:shadow-xl"
-                  alt="ImageVision Pro Dashboard"
-                  priority
-                />
-              </CardItem>
-              <div className="mt-8">
-                <CardItem translateZ={30} as="div" className="w-full">
-                  <Link 
-                    href="https://github.com/Ayaan-tech/ImageVision" 
-                    className="block w-full"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      window.location.href = 'https://github.com/Ayaan-tech/ImageVision';
-                    }}
-                  >
-                    <button className="w-full bg-blue-500 hover:bg-blue-600 text-white rounded-xl py-3 font-medium transition-colors">
-                      View Project
-                    </button>
-                  </Link>
-                </CardItem>
-              </div>
-            </CardBody>
-          </CardContainer>
+                View Project
+              </Button>
+            </CardActions>
+          </Card>
         </div>
       </div>
     </div>

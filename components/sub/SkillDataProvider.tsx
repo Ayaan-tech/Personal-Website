@@ -14,7 +14,7 @@ interface Props {
 const SkillDataProvider = ({ src, width, height, index }: Props) => {
   const ref = useRef<HTMLDivElement | null>(null); // Added type for ref
   const inView = useInView(ref, {
-    triggerOnce: true,
+    once: true,
     margin: '0px 0px -200px 0px',
   });
 
