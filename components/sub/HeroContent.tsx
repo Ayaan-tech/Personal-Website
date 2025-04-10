@@ -23,9 +23,7 @@ const HeroContent = () => {
           className="Welcome-box py-[8px] px-[7px] border border-[#7042f88b] opacity-[0.9]"
         >
           <SparklesIcon className="text-[#b49bff] mr-[10px] h-5 w-5" />
-          <h1 className="Welcome-text text-[13px]">
-            Hey There👋
-          </h1>
+          <h1 className="Welcome-text text-[13px]">Hey There👋</h1>
         </motion.div>
 
         <motion.div
@@ -33,12 +31,11 @@ const HeroContent = () => {
           className="flex flex-col gap-6 mt-6 text-6xl font-bold text-white max-w-[600px] w-auto h-auto"
         >
           <span>
-            I am 
+            I am
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
               {" "}
-              Ayaan Amjad Quasmi {" "}
+              Ayaan Amjad Quasmi{" "}
             </span>
-           
           </span>
         </motion.div>
 
@@ -48,11 +45,14 @@ const HeroContent = () => {
         >
           I&apos;m a Full Stack Software Engineer and{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
-            AI/ML Passionate {""}</span> experience in Website,
-          Mobile, and Software development. Check out my projects and skills.
+            AI/ML Passionate
+          </span>{" "}
+          with experience in Website, Mobile, and Software development. Check
+          out my projects and skills.
         </motion.p>
         <motion.a
           variants={slideInFromLeft(1)}
+          href="#about" // Added href for accessibility and functionality
           className="py-2 button-primary text-center text-white cursor-pointer rounded-lg max-w-[200px]"
         >
           Learn More!
@@ -68,6 +68,7 @@ const HeroContent = () => {
           alt="work icons"
           height={650}
           width={650}
+          priority // Added priority for better image loading in production
         />
       </motion.div>
     </motion.div>
