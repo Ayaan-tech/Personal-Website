@@ -35,7 +35,13 @@ const HeroContent = () => {
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
               {" "}
               Ayaan Amjad Quasmi{" "}
+            </span> 
+            Experiment 3
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
+              {" "}
+              AWS EC2 Service{" "}
             </span>
+            
           </span>
         </motion.div>
 
